@@ -11,6 +11,7 @@ import org.apache.hadoop.mapreduce.Counter;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.Reducer.Context;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.NullOutputFormat;
@@ -40,9 +41,16 @@ public class DistinctCount {
 	}
 	
 	public static class DistinctCountReducer extends Reducer<IntWritable, NullWritable, IntWritable, NullWritable> {
+		int count =0;
 		public void reduce(IntWritable key, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
-			context.getCounter(COUNTER_GROUP, COUNTER_DISTINCT).increment(1);
+			count++;
 			context.write(key, NullWritable.get());
+		}
+		@Override
+		protected void cleanup(Context context) throws IOException,
+				InterruptedException {
+			context.getCounter(COUNTER_GROUP, COUNTER_DISTINCT).increment(count);
+			super.cleanup(context);
 		}
 	}
 	

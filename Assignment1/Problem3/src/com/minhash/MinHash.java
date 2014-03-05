@@ -21,19 +21,22 @@ import org.apache.hadoop.util.GenericOptionsParser;
 
 public class MinHash {
 	public static final Log log = LogFactory.getLog(MinHash.class);
-	public static final int NUM_HASH_FUNCTION=5;
-	public static final int MAX_INT = 100;
-	static int [][]hashConstants;
+	public static final int NUM_HASH_FUNCTION=2;
+	public static final int MAX_INT = 5;
+	static int hashConstants[][];
 	static{
 		Random random = new Random();
 		hashConstants = new int[NUM_HASH_FUNCTION][2];
 		for(int k=0;k<NUM_HASH_FUNCTION;k++){
 			hashConstants[k][0]=Math.abs(random.nextInt()%MAX_INT);
 			hashConstants[k][1]=Math.abs(random.nextInt()%MAX_INT);
-			//log.info(hashConstants[k][0] + "-- " +hashConstants[k][1]);
 		}
-		
-	}
+/*		hashConstants = new int[NUM_HASH_FUNCTION][2];
+		hashConstants[0][0]=1;
+		hashConstants[0][1]=1;
+		hashConstants[1][0]=3;
+		hashConstants[1][1]=1;
+*/	}
 	
 	public static class HashWritable implements WritableComparable<HashWritable>{
 		int documentId;
@@ -96,16 +99,22 @@ public class MinHash {
 				throws IOException, InterruptedException {
 			StringTokenizer tokenizer = new StringTokenizer(value.toString()," ");
 			int documentId = 0;
+			long hashvalues[] = null;
+			try{
+				hashvalues= computeHashValues(Integer.parseInt(tokenizer.nextToken()));
+			}catch(NumberFormatException e){
+				hashvalues= computeHashValues(0);
+			}
+			
 			try{
 				while(tokenizer.hasMoreTokens()){
 					String token = tokenizer.nextToken();
 					if(Integer.parseInt(token)==1){
-						long hashvalues[] = computeHashValues(key.get());
-						
 						for(int hashID=0;hashID<NUM_HASH_FUNCTION;hashID++){
 							hashKey.setDocumentId(documentId);
 							hashKey.setHashId(hashID);
 							longvalue.set(hashvalues[hashID]);
+							log.info(hashKey.documentId+"--"+hashKey.hashId+"=="+longvalue.get()); 
 							context.write(hashKey, longvalue);
 						}
 					}
