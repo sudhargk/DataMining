@@ -68,9 +68,6 @@ public class MovieRating {
 			}
 			context.write(movieId, rating);
 		}
-		
-		
-	
 	}
 	public static class AverageMovieRatingCombiner extends Reducer<IntWritable, RatingWritable, IntWritable, RatingWritable> {
 		private RatingWritable rating = new RatingWritable();

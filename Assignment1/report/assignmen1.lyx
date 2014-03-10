@@ -43,8 +43,6 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 1cm
-\rightmargin 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -122,7 +120,23 @@ Combiner
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob1/LargestInteger.java"
-lstparams "basicstyle={'\\small'},breakautoindent=true,breaklines=true,caption={Map Reducef for Largest Integer},frame=TRBL,language=Java,linerange={20-61}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Map  for Largest Integer},frame=TB,language=Java,linerange={20-31}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob1/LargestInteger.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer for Largest Integer},frame=TB,language=Java,linerange={49-61}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob1/LargestInteger.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Combiner for Largest Integer},frame=TB,language=Java,linerange={36-47}"
 
 \end_inset
 
@@ -162,7 +176,15 @@ Combiner
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob2/Distinct.java"
-lstparams "basicstyle={'\\small'},breakautoindent=true,breaklines=true,caption={Map Reducef for Distinct Values},frame=TRBL,language=Java,linerange={20-40}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Mapper for Distinct Values},frame=TB,language=Java,linerange={21-32}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob2/Distinct.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer for Distinct Values},frame=TB,language=Java,linerange={34-40}"
 
 \end_inset
 
@@ -184,7 +206,7 @@ Mapper, Reducer and Combiner works in similar fashion as in above problem,
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob3/DistinctCount.java"
-lstparams "basicstyle={'\\small'},breakautoindent=true,breaklines=true,caption={Map Reducef to count Distinct Values},frame=TRBL,language=Java,linerange={22-55}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer to count Distinct Values},frame=TB,language=Java,linerange={43-55}"
 
 \end_inset
 
@@ -192,7 +214,7 @@ lstparams "basicstyle={'\\small'},breakautoindent=true,breaklines=true,caption={
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem1/src/com/prob3/DistinctCount.java"
-lstparams "basicstyle={'\\small'},breakautoindent=true,breaklines=true,caption={Printing Counter Value},frame=TRBL,language=Java,linerange={76-80}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Printing Counter Values},frame=TB,language=Java,linerange={77-80}"
 
 \end_inset
 
@@ -233,7 +255,7 @@ Mapper
 \series bold
 Reducer
 \series default
- : It merges all reviews from for a movie id and computes the average.
+ : It merges all reviews for a movie and computes the average.
 \end_layout
 
 \begin_layout Itemize
@@ -246,11 +268,32 @@ Combiner
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem2/src/com/movierating/MovieRating.java"
-lstparams "basicstyle={\\small},breakautoindent=true,breaklines=true,caption={Finding Movie Ratings},frame=TRBL,language=Java,linerange={25-107}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Mapper to find Movie Ratings},frame=TB,language=Java,linerange={{56-71}	}"
 
 \end_inset
 
 
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem2/src/com/movierating/MovieRating.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer to find Movie Ratings},frame=TB,language=Java,linerange={92-105}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem2/src/com/movierating/MovieRating.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Combiner to find Movie Ratings},frame=TB,language=Java,linerange={72-91}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Using a customized writable class Rating Variable which holds the count
+ of ratings and sum of ratings.
 \end_layout
 
 \begin_layout Section
@@ -278,6 +321,7 @@ Solution
 
 \begin_layout Standard
 Assuming a set of random function of form : A*X+ B mod C.
+ Here customized writable classes are implemented for convenience
 \end_layout
 
 \begin_layout Itemize
@@ -309,7 +353,15 @@ Combiner
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem3/src/com/minhash/MinHash.java"
-lstparams "basicstyle={\\small},breakautoindent=true,breaklines=true,caption={Finding MinHash Signatures},frame=TRBL,language=Java,linerange={41-140}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Mapper for finding MinHash Signatures},frame=TB,language=Java,linerange={95-127}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem3/src/com/minhash/MinHash.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer for Finding MinHash Signatures},frame=TB,language=Java,linerange={128-140}"
 
 \end_inset
 
@@ -379,7 +431,15 @@ Combiner
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem4/src/com/lsh/LSH_Part1.java"
-lstparams "basicstyle={\\small},breakautoindent=true,breaklines=true,caption={Computing Candidate Pairs within buckets},frame=TRBL,language=Java,linerange={18-127}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Mapper to compute Candidate Pairs within bands},frame=TB,language=Java,linerange={67-116}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem4/src/com/lsh/LSH_Part1.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Reducer to compute Candidate Pairs within bands},frame=TB,language=Java,linerange={117-127}"
 
 \end_inset
 
@@ -413,7 +473,15 @@ Reducer
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem4/src/com/lsh/LSH_Part2.java"
-lstparams "basicstyle={\\small},breakautoindent=true,breaklines=true,caption={Computing Candidate Pairs Across Bands},frame=TRBL,language=Java,linerange={20-109}"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Mapper to Compute Candidate Pairs Across Bands},frame=TB,language=Java,linerange={66-102}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "G:/mtech/Sem II/Data Mining/assignments/DataMining/Assignment1/Problem4/src/com/lsh/LSH_Part2.java"
+lstparams "basicstyle={\\footnotesize},breakautoindent=true,breaklines=true,caption={Computing Candidate Pairs Across Bands},frame=TB,language=Java,linerange={103-109}"
 
 \end_inset
 
@@ -3104,7 +3172,7 @@ Which of these hash functions are true permutations?
 Solution
 \series default
  : The hash function h3 = 5x + 2 mod 5 is a true permutation because it
- generates all possible hash values from 0 to 5.
+ generates all possible hash values from 0 to 5 and 5is a co-prime
 \end_layout
 
 \begin_layout Subsection
