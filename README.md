@@ -24,7 +24,9 @@ Implementation of two density based clustering algorithm
 >> 1. *[Yelp]*
 >> 2. *[Foursquare]*
 
-- - -
+Project report and presentation can be found [here].
 
+- - -
+[here]:http://1drv.ms/1oPZZrm
 [Yelp]:https://www.yelp.com/dataset_challenge/dataset
 [Foursquare]:https://archive.org/details/201309_foursquare_dataset_umn
