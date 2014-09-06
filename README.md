@@ -18,8 +18,7 @@ Implementation of two density based clustering algorithm
 - - - 
 
 ### Project
-**Spotting of optimal Business Location**
-A machine learning solution using the location based social networking data to identify the best location amond the different location suggested.
+**Spotting of optimal Business Location** a  machine learning solution using the location based social networking data to identify the best location amond the different location suggested.
 
 > Two dataset on which we proposed our solutions are
 >> 1. *[Yelp]*
